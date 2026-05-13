@@ -12,10 +12,12 @@ Turn a YouTube URL into a structured pedagogical breakdown. Built so 20+ breakdo
 **Output folder — edit this line to point at wherever you want breakdowns to land (Obsidian vault, project folder, whatever):**
 
 ```
-OUTPUT_FOLDER = ~/Documents/video-breakdowns
+OUTPUT_FOLDER = ~/Documents/AI-Training-Vault/Video Breakdowns
 ```
 
-Create the folder if it doesn't exist yet. `~` expands to the user's home directory on Mac/Linux and Windows.
+The default is an Obsidian-ready vault at `~/Documents/AI-Training-Vault/`. Open that folder in Obsidian via "Open folder as vault" and the `.obsidian/` config will auto-create. `~` expands to the user's home directory on Mac/Linux and Windows.
+
+If the folder doesn't exist yet, create it before running the skill — the Write tool won't create missing parent directories silently.
 
 **Prerequisites:**
 - `yt-dlp` installed. If missing:
