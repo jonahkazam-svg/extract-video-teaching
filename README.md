@@ -81,11 +81,19 @@ For a corpus, just run the command on each URL one after another. Each run write
 - **Video length:** works up to ~2 hours. Longer videos may approach the Read tool's token limit; the skill handles this with chunked reads but very long content may need extra care.
 - **Pedagogy ≠ summary.** This skill produces a structured pedagogy breakdown, not a viewer-facing summary. If you want "what does this video say," use a different approach.
 
+## Examples
+
+The `examples/` folder ships with one real breakdown and a derived 18-session curriculum, so you can see what the skill produces before running it:
+
+- **`Productive Dude - FULL Claude Tutorial For Beginners in 2026! (FULL COURSE).md`** — pedagogical breakdown of a 1:52:38 beginner course. Every section the prompt produces, populated with real content. Useful as a reference for what "good output" looks like.
+- **`Productive Dude - 18-session pacing.md`** — an 18-session curriculum built from that breakdown's teaching sequence, with timestamps, walk-away outcomes, and a practice prompt per session. Useful as a template for converting any breakdown into a lesson plan.
+
 ## Files
 
 - `SKILL.md` — the skill definition Claude reads. Contains the workflow and the full extraction prompt.
 - `vtt_clean.py` — strips rolling-caption duplication and inline timing markup from raw VTT files, writes UTF-8 with `[HH:MM:SS]` markers every ~30s.
 - `README.md` — this file.
+- `examples/` — sample breakdown + derived session pacing (see above).
 
 ## License
 
