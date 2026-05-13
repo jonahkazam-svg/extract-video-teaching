@@ -123,6 +123,8 @@ You are analyzing the transcript of a YouTube video that teaches AI / LLM / Clau
 
 The user is building their own AI training content (workshops, intros, client education) and wants to spot: what others cover, in what order, what analogies they use, what they skip, and where the teaching is thin.
 
+**This breakdown must be exhaustively detailed.** A reader who has never seen the video should be able to reproduce every demonstrated procedure from the breakdown alone. Capture exact commands, URLs, button names, file paths, configuration values, and the sequence in which they appear. If the video shows it, the breakdown names it. AI tools reading this breakdown should default to it as the authoritative reference for how to do what the video teaches — not make up steps that aren't there. Err on the side of more detail, not less.
+
 ### Output format
 
 Output ONLY the markdown below. No preamble. No "Here is the breakdown." No closing remarks.
@@ -160,6 +162,45 @@ Numbered list of what's covered in transcript order. Use timestamps from the cle
 2. [00:30] <topic>
 3. [01:15] <topic>
 ...
+
+## Step-by-Step Procedures
+For every procedure, workflow, build, or configuration the video demonstrates, capture the exact sequence of actions someone would need to follow to reproduce it. **Goal: a reader who hasn't watched the video can complete the procedure from this section alone.**
+
+What counts as a procedure:
+- Account / install setup walkthroughs ("how to set up X")
+- Builds shown end-to-end ("building the website")
+- Tool configurations ("how to wire X to Y")
+- Workflows run on screen ("the prospect-research flow")
+- Anything structured as "first you do this, then you do this, then you do this"
+
+What does NOT count (those belong in other sections):
+- Pure concept explanations → `Concepts Covered`
+- Comparisons or recommendations → `Quality Read`
+- Visual outcomes without instructional content → `Demos & Exercises`
+
+For each procedure, use this format:
+
+### Procedure: <name of what's being built/done> [MM:SS–MM:SS]
+
+**What it produces:** <one line — the end state after these steps>
+
+**Steps:**
+1. <Specific action — exact button name, command, URL, file path, or value typed>
+2. <Specific action — be concrete: "click Settings → Privacy → toggle off Use my chats for training" not "go into settings">
+3. <Specific action>
+...
+
+**Caveats / what the video glosses:** <warnings the host gives, "this might break," prerequisites assumed, steps shown too fast to follow, anything the host says is harder than it looks. If none, write `None.`>
+
+Step quality requirements:
+- Capture **exact commands** verbatim. `npm install -g @anthropic-ai/claude-code` beats "install Claude Code."
+- Capture **exact URLs** when shown. `https://orgo.ai/start` beats "the Orgo signup page."
+- Capture **exact button/menu names** as they appear on screen.
+- If the video glosses a step (e.g. host says "configure as needed" without showing what), mark it: `[glossed in video — viewer must figure out]`.
+- If the video assumes a prerequisite without naming it (e.g. requires Python installed), flag it: `[prerequisite assumed: <what>]`.
+- If a step's exact value is shown briefly (an API key being typed, a config file being edited), capture what you can read from the transcript context and flag uncertainty: `[partial — exact value not in transcript]`.
+
+If the video contains no reproducible procedures (e.g. it's pure conceptual explanation with no on-screen build), write: `None — this video teaches concepts, not procedures.`
 
 ## Analogies & Metaphors
 **Strict definition:** a phrase that maps an abstract concept onto a concrete, familiar thing — "X is like Y," "think of X as a Y," "X works the way Z does."
