@@ -1,0 +1,20 @@
+# Transcript artifacts (temp files from running the skill)
+*.vtt
+*.clean.txt
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
